@@ -32,18 +32,19 @@
         </span>
       </el-dialog>
     </div >
+    <div class="mainbag">
     <div class="leftPart">
     <div class="title1" float="right">
   上传数据：
   </div>
     <div class="put2">
       <el-form v-model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
-        <h3>需上传数据信息</h3>
+        <h3>需上传数据信息：</h3>
 
         <el-form-item v-if="this.dynamicValidateForm.info.length===0">
         </el-form-item>
         <el-form-item v-else>
-          <table>
+          <table class="ta">
             <thead>
               <tr>
                 <th>name</th>
@@ -77,9 +78,10 @@
       </el-form>
     </div>
   </div>
+  <div class="rightpart">
     <div class="title1">
     获取结果：</div>
-    <div>
+    <div class="biaodan">
       <el-input v-model="inputData.energy" placeholder="请输入energy值" clearable>energy</el-input>
       <el-input v-model="inputData.ca" placeholder="请输入ca含量">ca</el-input>
       <el-input v-model="inputData.p" placeholder="请输入p含量">p</el-input>
@@ -96,6 +98,8 @@
       </div>
     </div>
   </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -175,15 +179,48 @@ export default {
 }
 </script>
 
-<style scoped>
-.title1{
+<style scoped lang="less">
+#app{
+  background-image: url(./assets/imgs/main.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.leftPart{
+  width:800px;
+  padding-left: 0px;
+  margin-top:20px;
+  margin-left:20%;
+  background-color: rgba(212, 217, 218,.8);
+  border-radius: 30px;
+  padding:10px;
+  box-shadow:8px 8px 10px rgb(163, 164, 168);
 
-  margin-top:0px;
-  height: 100px;
-  width:500px;
-  background-color: rgba(91, 136, 239, 0.5);
-  border-radius:30px ;
-  padding-left: 100px;
-  font-size: 50px;
+}
+.rightpart{
+  width:54%;
+  margin-left:300px;
+  margin-top:90px;
+  background-color: rgba(236, 233, 233,.8);
+  border-radius: 30px;
+  padding:10px;
+  box-shadow:8px 8px 10px rgb(163, 164, 168);
+}
+
+.title1{
+text-align:center;
+margin-top:5px;
+padding-top:10px;
+height: 100px;
+width: 700px;
+border-radius:30px ;
+padding-left: 100px;
+font-size: 40px;
+
+
+}
+.biaodan{
+  padding-top:20px;
+  padding-left:10px;
+  padding-right:10px;
 }
 </style>
